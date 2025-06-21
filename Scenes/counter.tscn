@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://lmi0c40mvvr3"]
+
+[ext_resource type="FontFile" uid="uid://dbtgd3pdig8cv" path="res://Fonts/WDXL_Lubrifont_JP_N/WDXLLubrifontJPN-Regular.ttf" id="1_vj8fb"]
+[ext_resource type="Script" uid="uid://cn8pn5fsjvtxh" path="res://Scripts/counter.gd" id="2_bfpsv"]
+
+[node name="Counter" type="RichTextLabel"]
+custom_minimum_size = Vector2(32, 32)
+offset_right = 1.0
+theme_override_fonts/normal_font = ExtResource("1_vj8fb")
+theme_override_font_sizes/normal_font_size = 32
+text = "10"
+scroll_active = false
+script = ExtResource("2_bfpsv")
