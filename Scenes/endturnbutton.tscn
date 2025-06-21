@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bweeu66e77pq1"]
+
+[ext_resource type="FontFile" uid="uid://dbtgd3pdig8cv" path="res://Fonts/WDXL_Lubrifont_JP_N/WDXLLubrifontJPN-Regular.ttf" id="1_kkw6h"]
+[ext_resource type="Script" uid="uid://d4ff41ugvpred" path="res://Scripts/endturnbutton.gd" id="2_o4pmp"]
+
+[node name="Endturnbutton" type="Button"]
+anchors_preset = -1
+anchor_right = 0.163194
+anchor_bottom = 0.158951
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_kkw6h")
+theme_override_font_sizes/font_size = 43
+text = "END TURN"
+script = ExtResource("2_o4pmp")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]

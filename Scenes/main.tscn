@@ -1,3 +1,99 @@
-[gd_scene format=3 uid="uid://c4jemrvsp7lce"]
+[gd_scene load_steps=10 format=3 uid="uid://c4jemrvsp7lce"]
+
+[ext_resource type="Script" uid="uid://mw1iaemom4ml" path="res://Scripts/main.gd" id="1_bo1nx"]
+[ext_resource type="Texture2D" uid="uid://brb3alvmqu28p" path="res://Assets/SigilRingInactive.png" id="2_8gbba"]
+[ext_resource type="Script" uid="uid://egvdckf4s1tw" path="res://Scripts/sigil_circle.gd" id="3_8gbba"]
+[ext_resource type="PackedScene" uid="uid://opfm4gdx3ic1" path="res://Scenes/actionbar.tscn" id="4_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://lmi0c40mvvr3" path="res://Scenes/counter.tscn" id="5_kry3j"]
+[ext_resource type="PackedScene" uid="uid://cjcugx40vh5f4" path="res://Scenes/healthbar.tscn" id="6_21xkr"]
+[ext_resource type="PackedScene" uid="uid://bweeu66e77pq1" path="res://Scenes/endturnbutton.tscn" id="7_6bp64"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h46cc"]
+radius = 34.4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kry3j"]
+bg_color = Color(0.84825, 0.49964, 0.266769, 1)
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_bo1nx")
+
+[node name="SigilCircle" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_8gbba")
+script = ExtResource("3_8gbba")
+
+[node name="Area2D" type="Area2D" parent="SigilCircle"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SigilCircle/Area2D"]
+shape = SubResource("CircleShape2D_h46cc")
+
+[node name="Player" type="ColorRect" parent="SigilCircle"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = -47.0
+offset_right = -17.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.619608, 1, 1, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Actionbar" parent="CanvasLayer" instance=ExtResource("4_jjvhh")]
+anchors_preset = -1
+anchor_left = 0.00607639
+anchor_top = 0.953704
+anchor_right = 0.331597
+anchor_bottom = 0.979938
+offset_right = 0.0
+offset_bottom = 0.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Cursebar" parent="CanvasLayer" instance=ExtResource("4_jjvhh")]
+anchors_preset = -1
+anchor_left = 0.00694444
+anchor_top = 0.912037
+anchor_right = 0.332465
+anchor_bottom = 0.941358
+offset_right = 0.0
+offset_bottom = 0.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_kry3j")
+metadata/_edit_use_anchors_ = true
+
+[node name="Counter" parent="CanvasLayer/Cursebar" instance=ExtResource("5_kry3j")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.02667
+anchor_top = -0.526316
+anchor_right = 1.112
+anchor_bottom = 1.15789
+offset_right = 0.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Healthbar" parent="CanvasLayer" instance=ExtResource("6_21xkr")]
+anchor_left = 0.850694
+anchor_top = 0.0185185
+anchor_right = 0.993056
+anchor_bottom = 0.271605
+offset_right = 0.0
+offset_bottom = 1.52588e-05
+stretch_mode = 4
+
+[node name="Endturnbutton" parent="CanvasLayer" instance=ExtResource("7_6bp64")]
+anchor_left = 0.842014
+anchor_top = 0.867284
+anchor_right = 0.981771
+anchor_bottom = 0.959877
+
+[connection signal="input_event" from="SigilCircle/Area2D" to="SigilCircle" method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="SigilCircle/Area2D" to="SigilCircle" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="SigilCircle/Area2D" to="SigilCircle" method="_on_area_2d_mouse_exited"]
+[connection signal="endturn" from="CanvasLayer/Endturnbutton" to="." method="_on_endturnbutton_endturn"]

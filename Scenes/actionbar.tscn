@@ -7,16 +7,10 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ah00s"]
 bg_color = Color(0.597473, 0.422684, 0.944061, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xxmo0"]
-bg_color = Color(0.228511, 0.228511, 0.228511, 1)
-expand_margin_left = 1.0
-expand_margin_top = 1.0
-expand_margin_right = 1.0
-expand_margin_bottom = 1.0
-shadow_color = Color(0, 0, 0, 0.27451)
-shadow_offset = Vector2(0, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gxfe"]
+bg_color = Color(0.145868, 0.145868, 0.145868, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wdlh3"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6tgr"]
 bg_color = Color(1, 1, 1, 1)
 
 [node name="Actionbar" type="ProgressBar"]
@@ -28,6 +22,9 @@ value = 60.0
 show_percentage = false
 script = ExtResource("1_q6tgr")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.4
+
 [node name="Damagebar" type="ProgressBar" parent="."]
 z_index = -1
 layout_mode = 1
@@ -36,13 +33,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/background = SubResource("StyleBoxFlat_xxmo0")
-theme_override_styles/fill = SubResource("StyleBoxFlat_wdlh3")
-value = 80.0
+theme_override_styles/background = SubResource("StyleBoxFlat_2gxfe")
+theme_override_styles/fill = SubResource("StyleBoxFlat_q6tgr")
 show_percentage = false
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.4
-one_shot = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

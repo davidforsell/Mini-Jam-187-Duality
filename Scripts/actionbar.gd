@@ -3,9 +3,14 @@ extends ProgressBar
 @onready var timer = $Timer
 @onready var damage_bar = $Damagebar
 
-var health = 0 : set = _set_health
+var health = 0
 
-func _set_health(new_health):
+func set_health(new_health):
+	health = min(max_value, new_health)
+	value = health
+	damage_bar.value = health
+
+func set_health_with_timer(new_health):
 	var prev_health = health
 	health = min(max_value, new_health)
 	value = health
@@ -14,8 +19,6 @@ func _set_health(new_health):
 		timer.start()
 	else:
 		damage_bar.value = health
-	
-		
 
 func init_health(_health):
 	health = _health
@@ -23,7 +26,6 @@ func init_health(_health):
 	value = health
 	damage_bar.max_value = health
 	damage_bar.value = health
-
 
 func _on_timer_timeout() -> void:
 	damage_bar.value = health

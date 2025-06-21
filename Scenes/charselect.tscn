@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://2vifi6tfvb0q"]
+
+[ext_resource type="Script" uid="uid://f3c10e8fc0xp" path="res://Scripts/charselect.gd" id="1_t453p"]
+[ext_resource type="FontFile" uid="uid://dbtgd3pdig8cv" path="res://Fonts/WDXL_Lubrifont_JP_N/WDXLLubrifontJPN-Regular.ttf" id="2_rr2at"]
+
+[node name="Charselect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t453p")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="KnightRect" type="ColorRect" parent="."]
+layout_mode = 0
+anchor_left = 0.359375
+anchor_top = 0.165123
+anchor_right = 0.609375
+anchor_bottom = 0.794753
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="KnightRect"]
+layout_mode = 0
+anchor_left = 0.145833
+anchor_top = 0.362745
+anchor_right = 0.871528
+anchor_bottom = 0.637255
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_rr2at")
+theme_override_font_sizes/normal_font_size = 82
+text = "Knight"
+metadata/_edit_use_anchors_ = true
+
+[node name="Outline" type="ColorRect" parent="KnightRect"]
+visible = false
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0833333
+anchor_top = -0.0441177
+anchor_right = 1.08333
+anchor_bottom = 1.04657
+offset_bottom = 3.05176e-05
+mouse_filter = 2
+color = Color(0.791455, 0.706919, 0.917073, 1)
+metadata/_edit_use_anchors_ = true
+
+[connection signal="gui_input" from="KnightRect" to="." method="_on_knight_rect_gui_input"]
+[connection signal="mouse_entered" from="KnightRect" to="." method="_on_knight_rect_mouse_entered"]
+[connection signal="mouse_exited" from="KnightRect" to="." method="_on_knight_rect_mouse_exited"]

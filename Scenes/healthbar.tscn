@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjcugx40vh5f4"]
+
+[ext_resource type="Texture2D" uid="uid://bq3ceglu6y5ua" path="res://Assets/Health Bar/health1.png" id="1_1v5t1"]
+[ext_resource type="Script" uid="uid://bwpgc01wn8kub" path="res://Scripts/healthbar.gd" id="2_bngtt"]
+
+[node name="Healthbar" type="TextureRect"]
+texture_filter = 1
+anchors_preset = -1
+anchor_right = 0.0555556
+anchor_bottom = 0.0987654
+offset_right = -24.0
+offset_bottom = -24.0
+texture = ExtResource("1_1v5t1")
+script = ExtResource("2_bngtt")
+metadata/_edit_use_anchors_ = true
