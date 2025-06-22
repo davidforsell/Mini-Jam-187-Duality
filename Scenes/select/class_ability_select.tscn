@@ -1,0 +1,138 @@
+[gd_scene load_steps=3 format=3 uid="uid://cho1maigesjs1"]
+
+[ext_resource type="FontFile" uid="uid://dbtgd3pdig8cv" path="res://Fonts/WDXL_Lubrifont_JP_N/WDXLLubrifontJPN-Regular.ttf" id="1_hftlv"]
+[ext_resource type="Script" uid="uid://dvcir2go85i6q" path="res://Scripts/class_ability_select.gd" id="1_oh0vq"]
+
+[node name="ClassAbilitySelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oh0vq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.784314)
+
+[node name="Mettle" type="ColorRect" parent="."]
+z_index = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.359375
+anchor_top = 0.165123
+anchor_right = 0.609375
+anchor_bottom = 0.794753
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="RichTextLabel" parent="Mettle"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.138889
+anchor_top = 0.0269608
+anchor_right = 0.864583
+anchor_bottom = 0.17402
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_hftlv")
+theme_override_font_sizes/normal_font_size = 46
+text = "Mettle"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Outline" type="ColorRect" parent="Mettle"]
+visible = false
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0833333
+anchor_top = -0.0441177
+anchor_right = 1.08333
+anchor_bottom = 1.04657
+offset_bottom = 3.05176e-05
+mouse_filter = 2
+color = Color(0.791455, 0.706919, 0.917073, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Description" type="RichTextLabel" parent="Mettle"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.100694
+anchor_top = 0.220589
+anchor_right = 0.923611
+anchor_bottom = 0.892157
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_hftlv")
+theme_override_font_sizes/normal_font_size = 19
+text = "Knight Class Ability
+
++ 10 AP
++ 3 HP
+- 5 Curse
+1.5x Damage (one turn)
+
+5 Turn Cooldown
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Cancel" type="Button" parent="."]
+z_index = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.627604
+anchor_top = 0.830247
+anchor_right = 0.740451
+anchor_bottom = 0.962963
+text = "Cancel"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+z_index = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.349826
+anchor_top = 0.029321
+anchor_right = 0.625
+anchor_bottom = 0.138889
+theme_override_fonts/normal_font = ExtResource("1_hftlv")
+theme_override_font_sizes/normal_font_size = 47
+text = "CLASS ABILITIES"
+metadata/_edit_use_anchors_ = true
+
+[node name="Cooldown" type="ColorRect" parent="."]
+visible = false
+z_index = 2
+layout_mode = 0
+anchor_left = 0.348958
+anchor_top = 0.143519
+anchor_right = 0.62066
+anchor_bottom = 0.820988
+color = Color(0.992637, 0.730071, 0.731554, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Cooldown"]
+layout_mode = 0
+anchor_left = 0.0766773
+anchor_top = 0.28246
+anchor_right = 0.913738
+anchor_bottom = 0.605923
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_hftlv")
+theme_override_font_sizes/normal_font_size = 46
+text = "On cooldown.
+5 turns left"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="gui_input" from="Mettle" to="." method="_on_mettle_gui_input"]
+[connection signal="mouse_entered" from="Mettle" to="." method="_on_knight_rect_mouse_entered"]
+[connection signal="mouse_exited" from="Mettle" to="." method="_on_knight_rect_mouse_exited"]
+[connection signal="button_down" from="Cancel" to="." method="_on_cancel_button_down"]

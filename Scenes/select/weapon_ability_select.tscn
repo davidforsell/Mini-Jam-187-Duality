@@ -1,0 +1,129 @@
+[gd_scene load_steps=3 format=3 uid="uid://bloxja56igbpq"]
+
+[ext_resource type="Script" uid="uid://s1s7mfv2uqt1" path="res://Scripts/weapon_ability_select.gd" id="1_litgn"]
+[ext_resource type="FontFile" uid="uid://dbtgd3pdig8cv" path="res://Fonts/WDXL_Lubrifont_JP_N/WDXLLubrifontJPN-Regular.ttf" id="2_ed0hy"]
+
+[node name="WeaponAbilitySelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_litgn")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.784314)
+
+[node name="KnightRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.359375
+anchor_top = 0.165123
+anchor_right = 0.609375
+anchor_bottom = 0.794753
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="RichTextLabel" parent="KnightRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.138889
+anchor_top = 0.0269615
+anchor_right = 0.864584
+anchor_bottom = 0.301472
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_ed0hy")
+theme_override_font_sizes/normal_font_size = 46
+text = "Sweeping Swing"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Outline" type="ColorRect" parent="KnightRect"]
+visible = false
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0833333
+anchor_top = -0.0441177
+anchor_right = 1.08333
+anchor_bottom = 1.04657
+offset_bottom = 3.05176e-05
+mouse_filter = 2
+color = Color(0.791455, 0.706919, 0.917073, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Description" type="RichTextLabel" parent="KnightRect"]
+layout_mode = 0
+anchor_left = 0.0972222
+anchor_top = 0.394608
+anchor_right = 0.920139
+anchor_bottom = 0.821079
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_ed0hy")
+theme_override_font_sizes/normal_font_size = 19
+text = "Deal longsword damage to the three tiles in front of you.
+
+- 3 AP
+- 12-15 Damage per tile
+
+Cooldown: 5 Turns
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Cancel" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 0.627604
+anchor_top = 0.830247
+anchor_right = 0.740451
+anchor_bottom = 0.962963
+text = "Cancel"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.33941
+anchor_top = 0.0339506
+anchor_right = 0.695312
+anchor_bottom = 0.143519
+theme_override_fonts/normal_font = ExtResource("2_ed0hy")
+theme_override_font_sizes/normal_font_size = 47
+text = "WEAPON ABILITIES"
+metadata/_edit_use_anchors_ = true
+
+[node name="Cooldown" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 404.0
+offset_top = 90.0
+offset_right = 722.0
+offset_bottom = 535.0
+color = Color(1, 1, 0.67451, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Cooldown"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0766773
+anchor_top = 0.28246
+anchor_right = 0.913738
+anchor_bottom = 0.605923
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_ed0hy")
+theme_override_font_sizes/normal_font_size = 46
+text = "On cooldown.
+5 turns left"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="gui_input" from="KnightRect" to="." method="_on_knight_rect_gui_input"]
+[connection signal="mouse_entered" from="KnightRect" to="." method="_on_knight_rect_mouse_entered"]
+[connection signal="mouse_exited" from="KnightRect" to="." method="_on_knight_rect_mouse_exited"]
+[connection signal="button_down" from="Cancel" to="." method="_on_cancel_button_down"]

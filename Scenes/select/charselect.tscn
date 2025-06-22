@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://2vifi6tfvb0q"]
 
-[ext_resource type="Script" uid="uid://f3c10e8fc0xp" path="res://Scripts/charselect.gd" id="1_t453p"]
-[ext_resource type="FontFile" uid="uid://dbtgd3pdig8cv" path="res://Fonts/WDXL_Lubrifont_JP_N/WDXLLubrifontJPN-Regular.ttf" id="2_rr2at"]
+[ext_resource type="Script" uid="uid://f3c10e8fc0xp" path="res://Scripts/charselect.gd" id="1_kwyh0"]
+[ext_resource type="FontFile" uid="uid://dbtgd3pdig8cv" path="res://Fonts/WDXL_Lubrifont_JP_N/WDXLLubrifontJPN-Regular.ttf" id="2_lhf68"]
 
 [node name="Charselect" type="Control"]
 layout_mode = 3
@@ -10,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_t453p")
+script = ExtResource("1_kwyh0")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -2
@@ -38,7 +38,7 @@ anchor_right = 0.871528
 anchor_bottom = 0.637255
 mouse_filter = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("2_rr2at")
+theme_override_fonts/normal_font = ExtResource("2_lhf68")
 theme_override_font_sizes/normal_font_size = 82
 text = "Knight"
 metadata/_edit_use_anchors_ = true
@@ -56,6 +56,16 @@ offset_bottom = 3.05176e-05
 mouse_filter = 2
 color = Color(0.791455, 0.706919, 0.917073, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 403.0
+offset_top = 32.0
+offset_right = 861.0
+offset_bottom = 110.0
+theme_override_fonts/normal_font = ExtResource("2_lhf68")
+theme_override_font_sizes/normal_font_size = 43
+text = "Select Your Character"
 
 [connection signal="gui_input" from="KnightRect" to="." method="_on_knight_rect_gui_input"]
 [connection signal="mouse_entered" from="KnightRect" to="." method="_on_knight_rect_mouse_entered"]

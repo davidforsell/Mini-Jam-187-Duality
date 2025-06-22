@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://i1t0bpgs2ifs"]
+[gd_scene load_steps=5 format=3 uid="uid://i1t0bpgs2ifs"]
 
 [ext_resource type="Texture2D" uid="uid://b5u4gdhctk87j" path="res://Assets/Tile.png" id="1_rvq8p"]
 [ext_resource type="Script" uid="uid://b2fdjp0nt8pda" path="res://Scripts/tile.gd" id="2_4kj4d"]
+[ext_resource type="PackedScene" uid="uid://fomhecvv8tl5" path="res://Scenes/Player.tscn" id="3_4kj4d"]
+[ext_resource type="FontFile" uid="uid://dbtgd3pdig8cv" path="res://Fonts/WDXL_Lubrifont_JP_N/WDXLLubrifontJPN-Regular.ttf" id="4_khers"]
 
 [node name="Tile" type="Sprite2D"]
 z_index = -1
@@ -9,29 +11,25 @@ texture_filter = 1
 texture = ExtResource("1_rvq8p")
 script = ExtResource("2_4kj4d")
 
-[node name="Player" type="ColorRect" parent="."]
+[node name="EnemyLocation" type="Marker2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("3_4kj4d")]
 visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -52.0
-offset_top = -52.0
-offset_right = -12.0
-offset_bottom = -12.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.622328, 0.979347, 0.985029, 1)
 
-[node name="EnemyLocation1" type="Marker2D" parent="."]
-position = Vector2(-14, -17)
+[node name="Label" type="Label" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 0.375
+anchor_top = 0.21875
+anchor_right = 0.625
+anchor_bottom = 0.822917
+offset_left = -32.0
+offset_top = -32.0
+offset_right = -32.0
+offset_bottom = -32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_khers")
+theme_override_font_sizes/font_size = 32
+metadata/_edit_use_anchors_ = true
 
-[node name="EnemyLocation2" type="Marker2D" parent="."]
-position = Vector2(12, 10)
-
-[node name="EnemyLocation3" type="Marker2D" parent="."]
-position = Vector2(-12, 15)
-
-[node name="EnemyLocation4" type="Marker2D" parent="."]
-position = Vector2(16, -11)
+[node name="Orb" type="Sprite2D" parent="."]

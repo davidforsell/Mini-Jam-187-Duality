@@ -1,17 +1,9 @@
-[gd_scene format=3 uid="uid://cewoccw207bjg"]
+[gd_scene load_steps=2 format=3 uid="uid://cewoccw207bjg"]
+
+[ext_resource type="Script" uid="uid://soe5mk12410c" path="res://Scripts/enemy.gd" id="1_m1htj"]
 
 [node name="Enemy" type="Sprite2D"]
+script = ExtResource("1_m1htj")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.983729, 0, 0.206985, 1)
+[node name="DamageNumbersOrigin" type="Marker2D" parent="."]
+position = Vector2(0, -23)

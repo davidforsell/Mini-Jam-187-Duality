@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dggcnt8oyevwb"]
+
+[ext_resource type="Script" uid="uid://wu7i5wds22f2" path="res://Scripts/polyphonic_player.gd" id="1_f6y0v"]
+
+[node name="SfxPlayer" type="AudioStreamPlayer"]
+script = ExtResource("1_f6y0v")

@@ -1,0 +1,72 @@
+[gd_resource type="Resource" script_class="AudioLibrary" load_steps=21 format=3 uid="uid://dfpyophi8u221"]
+
+[ext_resource type="Script" uid="uid://bh3kkgx2snty4" path="res://Scripts/audio_library.gd" id="1_3ol05"]
+[ext_resource type="Script" uid="uid://c3b3rhict22cm" path="res://Scripts/sound_effect.gd" id="2_o5dbj"]
+[ext_resource type="AudioStream" uid="uid://god4a2acowxt" path="res://Assets/Sounds/Death.wav" id="3_1m3l7"]
+[ext_resource type="AudioStream" uid="uid://dfp5vgsiysls8" path="res://Assets/Sounds/Hit.wav" id="4_gsa26"]
+[ext_resource type="AudioStream" uid="uid://bfcnrk538b8yh" path="res://Assets/Sounds/Impattack.wav" id="5_m3wic"]
+[ext_resource type="AudioStream" uid="uid://bdnmfqqc3oj3a" path="res://Assets/Sounds/Movesound.wav" id="6_nbinp"]
+[ext_resource type="AudioStream" uid="uid://dqbkje0odjjsk" path="res://Assets/Sounds/Purifysound.wav" id="7_ft0vv"]
+[ext_resource type="AudioStream" uid="uid://dwaow3ofdqhwe" path="res://Assets/Sounds/Ratattack.wav" id="8_y38vl"]
+[ext_resource type="AudioStream" uid="uid://ct5eo2p3clcuy" path="res://Assets/Sounds/Slimeattack.wav" id="9_ihov0"]
+[ext_resource type="AudioStream" uid="uid://chbeqf3lwg7s1" path="res://Assets/Sounds/Spawn.wav" id="10_quatv"]
+[ext_resource type="AudioStream" uid="uid://dg2cvey2rmuq1" path="res://Assets/Sounds/Specialhit.wav" id="11_w84pr"]
+
+[sub_resource type="Resource" id="Resource_aqgau"]
+script = ExtResource("2_o5dbj")
+tag = "death"
+stream = ExtResource("3_1m3l7")
+metadata/_custom_type_script = "uid://c3b3rhict22cm"
+
+[sub_resource type="Resource" id="Resource_8cuat"]
+script = ExtResource("2_o5dbj")
+tag = "hit"
+stream = ExtResource("4_gsa26")
+metadata/_custom_type_script = "uid://c3b3rhict22cm"
+
+[sub_resource type="Resource" id="Resource_o1aky"]
+script = ExtResource("2_o5dbj")
+tag = "imp_attack"
+stream = ExtResource("5_m3wic")
+metadata/_custom_type_script = "uid://c3b3rhict22cm"
+
+[sub_resource type="Resource" id="Resource_kwxat"]
+script = ExtResource("2_o5dbj")
+tag = "move"
+stream = ExtResource("6_nbinp")
+metadata/_custom_type_script = "uid://c3b3rhict22cm"
+
+[sub_resource type="Resource" id="Resource_aa8k8"]
+script = ExtResource("2_o5dbj")
+tag = "purify"
+stream = ExtResource("7_ft0vv")
+metadata/_custom_type_script = "uid://c3b3rhict22cm"
+
+[sub_resource type="Resource" id="Resource_kqrg6"]
+script = ExtResource("2_o5dbj")
+tag = "rat_attack"
+stream = ExtResource("8_y38vl")
+metadata/_custom_type_script = "uid://c3b3rhict22cm"
+
+[sub_resource type="Resource" id="Resource_nwwfm"]
+script = ExtResource("2_o5dbj")
+tag = "slime_attack"
+stream = ExtResource("9_ihov0")
+metadata/_custom_type_script = "uid://c3b3rhict22cm"
+
+[sub_resource type="Resource" id="Resource_s8vy0"]
+script = ExtResource("2_o5dbj")
+tag = "spawn"
+stream = ExtResource("10_quatv")
+metadata/_custom_type_script = "uid://c3b3rhict22cm"
+
+[sub_resource type="Resource" id="Resource_jut3y"]
+script = ExtResource("2_o5dbj")
+tag = "special_hit"
+stream = ExtResource("11_w84pr")
+metadata/_custom_type_script = "uid://c3b3rhict22cm"
+
+[resource]
+script = ExtResource("1_3ol05")
+sound_effects = Array[ExtResource("2_o5dbj")]([SubResource("Resource_aqgau"), SubResource("Resource_8cuat"), SubResource("Resource_o1aky"), SubResource("Resource_kwxat"), SubResource("Resource_aa8k8"), SubResource("Resource_kqrg6"), SubResource("Resource_nwwfm"), SubResource("Resource_s8vy0"), SubResource("Resource_jut3y")])
+metadata/_custom_type_script = "uid://bh3kkgx2snty4"

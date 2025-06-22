@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8ydr2q1cic5c"]
+
+[ext_resource type="Script" uid="uid://bhy8sih5t4qr2" path="res://Scripts/gameover.gd" id="1_3mm25"]
+[ext_resource type="FontFile" uid="uid://dbtgd3pdig8cv" path="res://Fonts/WDXL_Lubrifont_JP_N/WDXLLubrifontJPN-Regular.ttf" id="2_611cj"]
+
+[node name="Gameover" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3mm25")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.34809
+anchor_top = 0.364198
+anchor_right = 0.771701
+anchor_bottom = 0.620371
+theme_override_fonts/normal_font = ExtResource("2_611cj")
+theme_override_font_sizes/normal_font_size = 100
+text = "You Won!"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.215278
+anchor_top = 0.697531
+anchor_right = 0.474826
+anchor_bottom = 0.858025
+theme_override_fonts/font = ExtResource("2_611cj")
+theme_override_font_sizes/font_size = 33
+text = "Try Again?"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.527778
+anchor_top = 0.697531
+anchor_right = 0.787326
+anchor_bottom = 0.858025
+theme_override_fonts/font = ExtResource("2_611cj")
+theme_override_font_sizes/font_size = 33
+text = "Credits"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="Button2" to="." method="_on_button_2_button_down"]

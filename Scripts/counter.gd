@@ -13,7 +13,7 @@ func set_value(new_value):
 	_update_text()
 
 func _update_text():
-	text = String(value)
+	text = str(value)
 
 func decrement():
 	if value == 0:

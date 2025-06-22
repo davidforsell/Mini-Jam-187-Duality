@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=3 uid="uid://cknquuh5ct18w"]
+
+[ext_resource type="FontFile" uid="uid://dbtgd3pdig8cv" path="res://Fonts/WDXL_Lubrifont_JP_N/WDXLLubrifontJPN-Regular.ttf" id="1_fg4p2"]
+[ext_resource type="Script" uid="uid://bhy8sih5t4qr2" path="res://Scripts/gameover.gd" id="1_qpupn"]
+
+[node name="Gameover" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qpupn")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.298611
+anchor_top = 0.376543
+anchor_right = 0.722222
+anchor_bottom = 0.632716
+theme_override_fonts/normal_font = ExtResource("1_fg4p2")
+theme_override_font_sizes/normal_font_size = 100
+text = "GAME OVER"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.215278
+anchor_top = 0.697531
+anchor_right = 0.474826
+anchor_bottom = 0.858025
+theme_override_fonts/font = ExtResource("1_fg4p2")
+theme_override_font_sizes/font_size = 33
+text = "Try Again?"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.527778
+anchor_top = 0.697531
+anchor_right = 0.787326
+anchor_bottom = 0.858025
+theme_override_fonts/font = ExtResource("1_fg4p2")
+theme_override_font_sizes/font_size = 33
+text = "Credits"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="Button2" to="." method="_on_button_2_button_down"]

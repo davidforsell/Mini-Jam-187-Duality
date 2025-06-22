@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfo5dx5fd0d4g"]
+
+[ext_resource type="Script" uid="uid://ben6kbdqqku7h" path="res://Scenes/credits.gd" id="1_7xmno"]
+[ext_resource type="Texture2D" uid="uid://b8txsgu88xv54" path="res://Assets/Knightfall_Credits.png" id="1_i8h6y"]
+[ext_resource type="FontFile" uid="uid://dbtgd3pdig8cv" path="res://Fonts/WDXL_Lubrifont_JP_N/WDXLLubrifontJPN-Regular.ttf" id="2_xbebw"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7xmno")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_i8h6y")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 0.90625
+anchor_top = 0.0123457
+anchor_right = 0.987847
+anchor_bottom = 0.118827
+theme_override_fonts/font = ExtResource("2_xbebw")
+theme_override_font_sizes/font_size = 50
+text = "Back"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

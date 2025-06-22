@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://fomhecvv8tl5"]
+
+[ext_resource type="Script" uid="uid://6wrnfh0ijv6o" path="res://Scripts/playernode.gd" id="1_rpqav"]
+[ext_resource type="Texture2D" uid="uid://bcbi3ytfhr4a8" path="res://Assets/Player/player_sprite_lor.png" id="2_kyqiw"]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_rpqav")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(9.53674e-07, 9.53674e-07)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("2_kyqiw")
